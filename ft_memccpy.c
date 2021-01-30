@@ -3,15 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seunoh <seunoh@student.42.kr>              +#+  +:+       +#+        */
+/*   By: seunoh <seunoh@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/19 16:57:15 by seunoh            #+#    #+#             */
-/*   Updated: 2021/01/19 16:57:15 by seunoh           ###   ########.fr       */
+/*   Created: 2021/01/31 01:03:05 by seunoh            #+#    #+#             */
+/*   Updated: 2021/01/31 01:04:15 by seunoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
-
 
 #include "libft.h"
 
@@ -29,7 +26,7 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	while (i < n)
 	{
 		*(tmp_dest + i) = *(tmp_src + i);
-		if(*(tmp_src + i) == tmp_c)
+		if (*(tmp_src + i) == tmp_c)
 			return (tmp_dest + i + 1);
 		i++;
 	}

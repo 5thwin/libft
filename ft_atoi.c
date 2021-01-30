@@ -6,13 +6,13 @@
 /*   By: seunoh <seunoh@student.42.kr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 19:59:11 by seunoh            #+#    #+#             */
-/*   Updated: 2021/01/28 19:59:11 by seunoh           ###   ########.fr       */
+/*   Updated: 2021/01/31 01:11:15 by seunoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_isspace(char c)
+int	ft_isspace(char c)
 {
 	if (c == ' ' || (c >= 9 && c <= 13))
 		return (1);
@@ -20,7 +20,7 @@ int			ft_isspace(char c)
 		return (0);
 }
 
-int		ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
 	long	num;
 	long	minor;
