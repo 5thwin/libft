@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seunoh <seunoh@student.42.kr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/20 17:48:47 by seunoh            #+#    #+#             */
-/*   Updated: 2021/01/20 17:48:47 by seunoh           ###   ########.fr       */
+/*   Created: 2021/01/22 15:52:36 by seunoh            #+#    #+#             */
+/*   Updated: 2021/01/22 15:52:36 by seunoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *b, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	unsigned char	*tmp;
+	unsigned char		*tmp_dest;
+	const unsigned char	*tmp_src;
 
-	tmp = b;
+	if(dest == src)
+		return (dest);
+
+	tmp_dest = dest;
+	tmp_src = (unsigned char*)src;
 	while (n--)
-		*tmp++ = 0;
+		*(tmp_dest++) = *(tmp_src++);
+	return (dest);
 }

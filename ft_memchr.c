@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seunoh <seunoh@student.42.kr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/20 17:48:47 by seunoh            #+#    #+#             */
-/*   Updated: 2021/01/20 17:48:47 by seunoh           ###   ########.fr       */
+/*   Created: 2021/01/19 16:57:15 by seunoh            #+#    #+#             */
+/*   Updated: 2021/01/19 16:57:15 by seunoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *b, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*tmp;
+	const unsigned char		*str;
+	unsigned char			find;
 
-	tmp = b;
+	str = (unsigned char *)s;
+	find = (unsigned char)c;
 	while (n--)
-		*tmp++ = 0;
+	{
+		if (*str == find)
+			return ((unsigned char *)str);
+		str++;
+	}
+	return (NULL);
 }

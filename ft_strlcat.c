@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seunoh <seunoh@student.42.kr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/20 17:48:47 by seunoh            #+#    #+#             */
-/*   Updated: 2021/01/20 17:48:47 by seunoh           ###   ########.fr       */
+/*   Created: 2021/01/28 20:20:07 by seunoh            #+#    #+#             */
+/*   Updated: 2021/01/28 20:20:07 by seunoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *b, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned char	*tmp;
+	size_t	d_len;
+	size_t	s_len;
+	size_t	i;
+	size_t	j;
 
-	tmp = b;
-	while (n--)
-		*tmp++ = 0;
+	d_len = ft_strlen(dst);
+	s_len = ft_strlen(src);
+	if (size <= d_len)
+		return (size + s_len);
+	i = 0;
+	j = d_len;
+	while ((src[i] != '\0') && i < (size - d_len - 1))
+	{
+		dst[j] = src[i];
+		i++;
+		j++;
+	}
+	dst[j] = '\0';
+	return (d_len + s_len);
 }
