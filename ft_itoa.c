@@ -6,7 +6,7 @@
 /*   By: seunoh <seunoh@student.42.kr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 15:10:47 by seunoh            #+#    #+#             */
-/*   Updated: 2021/02/13 15:10:47 by seunoh           ###   ########.fr       */
+/*   Updated: 2021/02/15 18:52:22 by seunoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static int	ft_numlen(int n)
 	}
 	return (len);
 }
+
 char		*ft_itoa(int n)
 {
 	int		len;
@@ -40,7 +41,7 @@ char		*ft_itoa(int n)
 	dst[len--] = '\0';
 	while (len >= 0)
 	{
-		dst[len--] = '0' + n%10;
+		dst[len--] = '0' + n % 10;
 		n /= 10;
 	}
 	if (neg)

@@ -6,13 +6,13 @@
 /*   By: seunoh <seunoh@student.42.kr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 16:35:54 by seunoh            #+#    #+#             */
-/*   Updated: 2021/02/13 16:35:54 by seunoh           ###   ########.fr       */
+/*   Updated: 2021/02/15 18:50:01 by seunoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char 	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
 	char			*dst;

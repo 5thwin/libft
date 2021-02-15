@@ -6,7 +6,7 @@
 /*   By: seunoh <seunoh@student.42.kr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/05 15:50:25 by seunoh            #+#    #+#             */
-/*   Updated: 2021/02/05 15:50:25 by seunoh           ###   ########.fr       */
+/*   Updated: 2021/02/15 18:49:41 by seunoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,14 @@ char	*ft_nulstr(char const *s1)
 		return (NULL);
 	return (ft_strdup(s1));
 }
-char 	*ft_strtrim(char const *s1, char const *set)
+
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		start;
 	int		end;
-	char*	str;
+	char	*str;
 
-	if(!s1 || !set)
+	if (!s1 || !set)
 		ft_nulstr(s1);
 	start = 0;
 	end = ft_strlen(s1);

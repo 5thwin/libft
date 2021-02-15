@@ -6,7 +6,7 @@
 /*   By: seunoh <seunoh@student.42.kr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/06 15:17:02 by seunoh            #+#    #+#             */
-/*   Updated: 2021/02/06 15:17:02 by seunoh           ###   ########.fr       */
+/*   Updated: 2021/02/15 18:48:19 by seunoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ char			**ft_split(char const *s, char c)
 	size_t	cnt;
 	char	**dst;
 
-	if(!s)
+	if (!s)
 		return (NULL);
 	cnt = ft_strcnt(s, c);
 	if (!(dst = (char **)malloc(sizeof(char*) * (cnt + 1))))
