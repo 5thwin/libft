@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seunoh <seunoh@student.42.kr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/19 16:57:15 by seunoh            #+#    #+#             */
-/*   Updated: 2021/01/19 16:57:15 by seunoh           ###   ########.fr       */
+/*   Created: 2021/02/17 14:56:46 by seunoh            #+#    #+#             */
+/*   Updated: 2021/02/17 14:56:46 by seunoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	unsigned char		*tmp_dest;
-	const unsigned char	*tmp_src;
+	t_list	*tmp;
+	t_list	*target;
 
-	if (!dest && !src)
-		return (NULL);
-	if (dest < src)
+	if (!lst || !del)
+		return ;
+	target = *lst;
+	while (target != NULL)
 	{
-		ft_memcpy(dest, src, n);
+		tmp = target->next;
+		ft_lstdelone(lst, del);
+		target = tmp;
 	}
-	else
-	{
-		tmp_dest = dest + (n - 1);
-		tmp_src = (unsigned char *)src + (n - 1);
-		while (n--)
-			*tmp_dest-- = *tmp_src--;
-	}
-	return (dest);
+	*lst = NULL;
 }
