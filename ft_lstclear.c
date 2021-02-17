@@ -6,7 +6,7 @@
 /*   By: seunoh <seunoh@student.42.kr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 14:56:46 by seunoh            #+#    #+#             */
-/*   Updated: 2021/02/17 14:56:46 by seunoh           ###   ########.fr       */
+/*   Updated: 2021/02/17 17:13:09 by seunoh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	while (target != NULL)
 	{
 		tmp = target->next;
-		ft_lstdelone(lst, del);
+		ft_lstdelone(target, del);
 		target = tmp;
 	}
 	*lst = NULL;
