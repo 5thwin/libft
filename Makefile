@@ -55,7 +55,7 @@ BONUS =	ft_lstnew.c \
   		ft_lstdelone.c \
   		ft_lstclear.c \
   		ft_lstiter.c \
-  		ft_lstmap
+  		ft_lstmap.c
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -65,20 +65,23 @@ RM = rm -f
 OBJS = $(SRCS:.c=.o)
 OBJS_B = $(BONUS:.c=.o)
 
+.c.o:
+		${CC} ${CFLAGS} -g -c $< -o ${<:.c=.o}
+
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
-bonus:	$(OBJS) $(OBJS_BONUS)
-	$(AR) $(NAME) $(OBJS) $(OBJS_BONUS)
+bonus:	$(OBJS) $(OBJS_B)
+	$(AR) $(NAME) $(OBJS) $(OBJS_B)
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_BONUS)
+	$(RM) $(OBJS) $(OBJS_B)
 
 fclean: clean
 	$(RM) $(NAME)
 
-re: clean all
+re: fclean all
 
 .PHONY: all clean fclean re bonus
