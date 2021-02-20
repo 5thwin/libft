@@ -65,6 +65,9 @@ RM = rm -f
 OBJS = $(SRCS:.c=.o)
 OBJS_B = $(BONUS:.c=.o)
 
+.c.o: $(SRCS)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
@@ -80,5 +83,7 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+
 
 .PHONY: all clean fclean re bonus
