@@ -6,7 +6,7 @@
 #    By: seunoh <seunoh@student.42.kr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/16 19:29:15 by seunoh            #+#    #+#              #
-#    Updated: 2021/02/16 19:29:15 by seunoh           ###   ########.fr        #
+#    Updated: 2021/02/20 11:53:54 by seunoh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,9 +64,6 @@ RM = rm -f
 
 OBJS = $(SRCS:.c=.o)
 OBJS_B = $(BONUS:.c=.o)
-
-.c.o:
-		${CC} ${CFLAGS} -g -c $< -o ${<:.c=.o}
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
