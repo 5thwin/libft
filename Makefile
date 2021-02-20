@@ -65,9 +65,6 @@ RM = rm -f
 OBJS = $(SRCS:.c=.o)
 OBJS_B = $(BONUS:.c=.o)
 
-.c.o:
-		${CC} ${CFLAGS} -g -c $< -o ${<:.c=.o}
-
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
